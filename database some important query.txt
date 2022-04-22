@@ -1,0 +1,80 @@
+CREATE DATABASE GUFRAN
+use GUFRAN
+CREATE  TABLE MDINFO(Id int primary key identity,First_Name varchar(40),last_name varchar(30),salary varchar(max),
+Department varchar(20),gender varchar(20))
+
+insert into MDINFO values ('Devesh','Kumar','50000','it','male')
+insert into MDINFO values ('sejal','prajapati','30000','hr','female');
+insert into MDINFO values ('Versha','verma','20000','tm','female');
+insert into MDINFO values('rajesh','Kumar','45000','tl','male');
+insert into MDINFO values ('Ramesh','Kumar','19000','tm','male');
+insert into MDINFO values ('Monika','Chaudhary','22500','tm','female');
+
+select id,first_name,last_name,salary,GETDATE()
+as NOWdate,Department,Gender,mobile_number from MDINFO
+
+delete from MDINFO where id='6'
+alter table MDINFO add mobile_number varchar(20)
+update MDINFO set mobile_number='9078956433' where id='1'
+update MDINFO set mobile_number='9743562132' where id='2'
+update MDINFO set mobile_number='9934850243' where id='3'
+update MDINFO set mobile_number='9643025691' where id='4'
+update MDINFO set mobile_number='9648394211' where id='5'
+
+SELECT id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,mobile_number
+FROM MDINFO WHERE SALARY <=10000
+
+update MDINFO set SALARY='9000' where id='4'
+update MDINFO set SALARY='8000' where id='2'
+
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,mobile_number
+from MDINFO where salary>=9000 and salary<25000
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,mobile_number 
+from MDINFO where salary not between 9000 and 15000
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,mobile_number
+from MDINFO where First_Name like'r%'
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,mobile_number
+from MDINFO where last_name like'%i'
+
+select id,first_name,last_name,salary,GETDATE() as NOWdate,Department,Gender,mobile_number
+from MDINFO where First_Name like '%a%'
+
+select * from MDINFO where First_Name like'____s%'
+
+SELECT*FROM MDINFO where First_Name LIKE 'v%' AND salary<=25000
+
+SELECT * FROM MDINFO where SALARY > 15000 AND salary <'sejal'
+
+
+SELECT*FROM MDINFO where id LIKE '1%' and id like '%1'
+UPDATE MDINFO set Department =null where id =4
+UPDATE MDINFO set Department ='team_leader' where id =2
+
+UPDATE MDINFO set salary =9000 where First_Name like 'r%' and Department ='null'
+
+UPDATE MDINFO set salary =25000 where First_Name like 'r%' and id<=4
+
+select*from MDINFO
+
+
+
+
+
+UPDATE MDINFO  set Department = 30 where First_Name like '_A%'
+
+UPDATE MDINFO set salary=8500 where Id between 3 and 5
+
+
+UPDATE MDINFO set salary=8500 where id not between 1 and 3
+
+UPDATE MDINFO set salary=15000 where First_Name like '%a' and Department ='tm'
+
+UPDATE MDINFO set salary=5500 where id like '%2' and Department like 't%'
+
+UPDATE MDINFO set salary=18000 where salary <26000 and First_Name like '%a%' and  Department <= '30'
+
+UPDATE MDINFO set salary=14000 where salary >= 15000 and SALARY<=20000
