@@ -1,5 +1,5 @@
-CREATE DATABASE GUFRAN
-use GUFRAN
+CREATE DATABASE employee
+use employee
 CREATE  TABLE MDINFO(Id int primary key identity,First_Name varchar(40),last_name varchar(30),salary varchar(max),
 Department varchar(20),gender varchar(20))
 
